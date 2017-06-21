@@ -19,5 +19,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("LibraryAppModule","I'm called!");
             }
         });
+
+        /*
+        :ads
+         */
+        //Interstitial interstitial = new Interstitial(this,"fake_id");
+        //interstitial.show();
     }
 }
