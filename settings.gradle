@@ -1,1 +1,1 @@
-include ':app', ':ads', ':db', ':io', ':web'
+include ':app', ':ads', ':db', ':io', ':web', ':webscraper'
