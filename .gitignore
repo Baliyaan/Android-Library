@@ -50,5 +50,5 @@ build/
 obj/
 
 # Gradle
-gradle/
-gradle.properties
+#gradle/
+#gradle.properties
