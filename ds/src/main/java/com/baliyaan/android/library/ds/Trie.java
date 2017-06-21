@@ -8,47 +8,47 @@ import java.util.Map;
  * Created by Pulkit Singh on 6/13/2017.
  */
 
-// Trie Node, which stores a character and the children in a HashMap
-class TrieNode {
-    public TrieNode(char ch)  {
-        value = ch;
-        children = new HashMap<>();
-        bIsEnd = false;
-    }
-    public HashMap<Character,TrieNode> getChildren() {   return children;  }
-    public ArrayList<String> getNchildren(String prefix, int n){
-        ArrayList<String> resultWords = new ArrayList<>();
-        Map<Character,TrieNode> map= children;
-        if(bIsEnd==true) //Leaf node
-            resultWords.add(prefix+value);
-        if(children.size()>0){ //Traverse children
-            for (Map.Entry<Character, TrieNode> entry : map.entrySet()) {
-                TrieNode child = entry.getValue();
-                ArrayList<String> resultsFromChild = child.getNchildren(prefix+value,n);
-                for(String oneResultFromChild : resultsFromChild){
-                    if(resultWords.size()<n)
-                        resultWords.add(oneResultFromChild);
-                    else
+// Implements the actual Trie
+public class Trie {
+    // Trie Node, which stores a character and the children in a HashMap
+    public static class TrieNode {
+        public TrieNode(char ch)  {
+            value = ch;
+            children = new HashMap<>();
+            bIsEnd = false;
+        }
+        public HashMap<Character,TrieNode> getChildren() {   return children;  }
+        public ArrayList<String> getNchildren(String prefix, int n){
+            ArrayList<String> resultWords = new ArrayList<>();
+            Map<Character,TrieNode> map= children;
+            if(bIsEnd==true) //Leaf node
+                resultWords.add(prefix+value);
+            if(children.size()>0){ //Traverse children
+                for (Map.Entry<Character, TrieNode> entry : map.entrySet()) {
+                    TrieNode child = entry.getValue();
+                    ArrayList<String> resultsFromChild = child.getNchildren(prefix+value,n);
+                    for(String oneResultFromChild : resultsFromChild){
+                        if(resultWords.size()<n)
+                            resultWords.add(oneResultFromChild);
+                        else
+                            break;
+                    }
+                    if(resultWords.size()==n)
                         break;
                 }
-                if(resultWords.size()==n)
-                    break;
             }
+            return resultWords;
         }
-        return resultWords;
+
+        public char getValue()                           {   return value;     }
+        public void setIsEnd(boolean val)                {   bIsEnd = val;     }
+        public boolean isEnd()                           {   return bIsEnd;    }
+
+        private char value;
+        private HashMap<Character,TrieNode> children;
+        private boolean bIsEnd;
     }
 
-    public char getValue()                           {   return value;     }
-    public void setIsEnd(boolean val)                {   bIsEnd = val;     }
-    public boolean isEnd()                           {   return bIsEnd;    }
-
-    private char value;
-    private HashMap<Character,TrieNode> children;
-    private boolean bIsEnd;
-}
-
-// Implements the actual Trie
-class Trie {
     // Constructor
     public Trie()   {     root = new TrieNode((char)0);       }
 
