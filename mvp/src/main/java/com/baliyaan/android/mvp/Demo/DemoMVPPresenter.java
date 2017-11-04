@@ -1,8 +1,9 @@
 package com.baliyaan.android.mvp.Demo;
 
+
 import android.app.Activity;
 
-import com.baliyaan.android.wordincontext.MVPInfra.Adapters.MVPPresenterAdapter;
+import com.baliyaan.android.mvp.Adapters.MVPPresenterAdapter;
 
 /**
  * Created by Pulkit Singh on 11/4/2017.

@@ -2,7 +2,7 @@ package com.baliyaan.android.mvp.Demo;
 
 import android.app.Activity;
 
-import com.baliyaan.android.wordincontext.MVPInfra.Adapters.MVPViewPortAdapter;
+import com.baliyaan.android.mvp.Adapters.MVPViewPortAdapter;
 
 /**
  * Created by Pulkit Singh on 11/4/2017.

@@ -3,14 +3,14 @@ package com.baliyaan.android.mvp.Adapters;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.baliyaan.android.wordincontext.MVPInfra.Interfaces.BaseMVPPresenter;
-import com.baliyaan.android.wordincontext.MVPInfra.Interfaces.BaseMVPView;
+import com.baliyaan.android.mvp.Interfaces.BaseMVPPresenter;
+import com.baliyaan.android.mvp.Interfaces.BaseMVPView;
 
 /**
  * Created by Pulkit Singh on 7/1/2017.
  */
 
-public class MVPPresenterAdapter<T extends BaseMVPView> implements BaseMVPPresenter {
+public class MVPPresenterAdapter<T extends BaseMVPView> implements BaseMVPPresenter{
 
     private T _view = null;
     private Activity _activity = null;
