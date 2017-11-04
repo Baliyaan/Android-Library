@@ -31,6 +31,7 @@ dependencies {
     compile project(':db')
     compile project(':ds')
     compile project(':io')
+    compile project(':mvp')
     compile project(':web')
     compile project(':webscraper')
 }
