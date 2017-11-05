@@ -1,8 +1,6 @@
 package com.baliyaan.android.mvp.Demo;
 
 
-import android.app.Activity;
-
 import com.baliyaan.android.mvp.Adapters.MVPPresenterAdapter;
 
 /**
@@ -13,8 +11,8 @@ public class DemoMVPPresenter
         extends MVPPresenterAdapter<DemoMVPContract.View>
         implements DemoMVPContract.Presenter {
 
-    protected DemoMVPPresenter(Activity activity, DemoMVPContract.View view) {
-        super(activity, view);
+    protected DemoMVPPresenter(DemoMVPContract.View view) {
+        super(view);
 
         view().makeViewSomething();
     }

@@ -16,7 +16,7 @@ public class DemoMVPNavigator extends MVPNavigatorAdapter
     DemoMVPNavigator(Activity activity){
         super(activity);
 
-        _port = new DemoMVPViewPort((Activity) getContext(),this);
+        _port = new DemoMVPViewPort(this);
         _port.makePortSomething();
     }
 

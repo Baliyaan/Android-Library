@@ -1,8 +1,9 @@
 package com.baliyaan.android.mvp.Adapters;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
+import com.baliyaan.android.mvp.Interfaces.BaseMVPNavigator;
 import com.baliyaan.android.mvp.Interfaces.BaseMVPPort;
 import com.baliyaan.android.mvp.Interfaces.BaseMVPPresenter;
 import com.baliyaan.android.mvp.Interfaces.BaseMVPView;
@@ -11,13 +12,11 @@ import com.baliyaan.android.mvp.Interfaces.BaseMVPView;
  * Created by Pulkit Singh on 7/1/2017.
  */
 
-public class MVPViewPortAdapter<N,P extends BaseMVPPresenter> implements BaseMVPView<P>, BaseMVPPort {
+public class MVPViewPortAdapter<N extends BaseMVPNavigator,P extends BaseMVPPresenter> implements BaseMVPView<P>, BaseMVPPort {
     private N _navigator;
-    private Activity _activity = null;
     protected P _presenter;
 
-    protected MVPViewPortAdapter(Activity activity, N navigator){
-        _activity = activity;
+    protected MVPViewPortAdapter(N navigator){
         _navigator = navigator;
     }
 
@@ -25,12 +24,13 @@ public class MVPViewPortAdapter<N,P extends BaseMVPPresenter> implements BaseMVP
         return _navigator;
     }
 
-    protected Activity activity(){
-        return _activity;
-    }
-
     protected P presenter() {
         return _presenter;
+    }
+
+    @Override
+    public Context getContext() {
+        return navigator().getContext();
     }
 
     // BaseMVPView implementation

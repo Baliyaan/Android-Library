@@ -1,6 +1,5 @@
 package com.baliyaan.android.mvp.Adapters;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.baliyaan.android.mvp.Interfaces.BaseMVPPresenter;
@@ -13,19 +12,13 @@ import com.baliyaan.android.mvp.Interfaces.BaseMVPView;
 public class MVPPresenterAdapter<T extends BaseMVPView> implements BaseMVPPresenter{
 
     private T _view = null;
-    private Activity _activity = null;
 
-    protected MVPPresenterAdapter(Activity activity, T view){
-        _activity = activity;
+    protected MVPPresenterAdapter(T view){
         _view = view;
     }
 
     protected T view(){
         return _view;
-    }
-
-    protected Activity activity(){
-        return _activity;
     }
 
     // BaseMVPPresenter implementation

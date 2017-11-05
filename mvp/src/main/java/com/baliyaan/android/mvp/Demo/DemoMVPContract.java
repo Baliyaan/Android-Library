@@ -1,5 +1,6 @@
 package com.baliyaan.android.mvp.Demo;
 
+import com.baliyaan.android.mvp.Interfaces.BaseMVPNavigator;
 import com.baliyaan.android.mvp.Interfaces.BaseMVPPort;
 import com.baliyaan.android.mvp.Interfaces.BaseMVPPresenter;
 import com.baliyaan.android.mvp.Interfaces.BaseMVPView;
@@ -17,7 +18,7 @@ public class DemoMVPContract {
         void makePresenterSomething();
     }
 
-    interface Navigator {
+    interface Navigator extends BaseMVPNavigator {
         void makeNavigatorSomething();
     }
 
