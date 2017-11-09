@@ -40,27 +40,16 @@ public class MVPViewPortAdapter<N extends BaseMVPNavigator,P extends BaseMVPPres
         return _presenter;
     }
 
-
     // BaseMVPPort implementation
     @Override
-    public void onSaveState() {
+    public void onSaveState(Bundle state) {
         if(null != presenter())
-            presenter().onSaveState();
+            presenter().onSaveState(state);
     }
 
     @Override
-    public void onResumeState() {
+    public void onRestoreState(Bundle state) {
         if(null != presenter())
-            presenter().onResumeState();
-    }
-
-    @Override
-    public Bundle getState() {
-        return presenter().getState();
-    }
-
-    @Override
-    public void setState(Bundle state) {
-        presenter().setState(state);
+            presenter().onRestoreState(state);
     }
 }

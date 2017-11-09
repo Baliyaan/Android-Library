@@ -7,8 +7,6 @@ import android.os.Bundle;
  */
 
 public interface BaseMVPPort {
-    void onSaveState();
-    void onResumeState();
-    Bundle getState();
-    void setState(Bundle state);
+    void onSaveState(Bundle state);
+    void onRestoreState(Bundle state);
 }

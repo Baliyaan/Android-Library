@@ -22,27 +22,16 @@ public class MVPPresenterAdapter<T extends BaseMVPView> implements BaseMVPPresen
     }
 
     // BaseMVPPresenter implementation
-    Bundle _state = null;
 
     @Override
-    public void onSaveState() {
+    public void onSaveState(Bundle state) {
         //Bundle bundle = null;
         //setState(bundle);
     }
 
     @Override
-    public void onResumeState() {
+    public void onRestoreState(Bundle state) {
         //Bundle bundle = getState();
         //bundle.getString("key1");
-    }
-
-    @Override
-    public Bundle getState() {
-        return _state;
-    }
-
-    @Override
-    public void setState(Bundle state) {
-        _state = state;
     }
 }
