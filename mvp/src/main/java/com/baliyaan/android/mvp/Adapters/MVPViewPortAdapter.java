@@ -2,6 +2,7 @@ package com.baliyaan.android.mvp.Adapters;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import com.baliyaan.android.mvp.Interfaces.BaseMVPNavigator;
 import com.baliyaan.android.mvp.Interfaces.BaseMVPPort;
@@ -14,10 +15,12 @@ import com.baliyaan.android.mvp.Interfaces.BaseMVPView;
 
 public class MVPViewPortAdapter<N extends BaseMVPNavigator,P extends BaseMVPPresenter> implements BaseMVPView<P>, BaseMVPPort {
     private N _navigator;
-    protected P _presenter;
+    private P _presenter;
+    private View _view;
 
-    protected MVPViewPortAdapter(N navigator){
+    protected MVPViewPortAdapter(N navigator, View view){
         _navigator = navigator;
+        _view = view;
     }
 
     protected N navigator(){
@@ -26,6 +29,10 @@ public class MVPViewPortAdapter<N extends BaseMVPNavigator,P extends BaseMVPPres
 
     protected P presenter() {
         return _presenter;
+    }
+
+    protected View view(){
+        return _view;
     }
 
     @Override

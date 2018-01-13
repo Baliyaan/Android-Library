@@ -1,5 +1,7 @@
 package com.baliyaan.android.mvp.Demo;
 
+import android.view.View;
+
 import com.baliyaan.android.mvp.Adapters.MVPViewPortAdapter;
 
 /**
@@ -10,8 +12,8 @@ public class DemoMVPViewPort
         extends MVPViewPortAdapter<DemoMVPContract.Navigator,DemoMVPContract.Presenter>
         implements DemoMVPContract.View, DemoMVPContract.Port {
 
-    protected DemoMVPViewPort(DemoMVPContract.Navigator navigator) {
-        super(navigator);
+    DemoMVPViewPort(DemoMVPContract.Navigator navigator, View view) {
+        super(navigator,view);
         super.bindPresenter(new DemoMVPPresenter(this));
 
         presenter().makePresenterSomething();
