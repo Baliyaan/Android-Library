@@ -290,12 +290,12 @@ public class SQLiteAssetHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public final void onConfigure(SQLiteDatabase db) {
+    public void onConfigure(SQLiteDatabase db) {
         // not supported!
     }
 
     @Override
-    public final void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) {
         // do nothing - createOrOpenDatabase() is called in
         // getWritableDatabase() to handle database creation.
     }
@@ -338,7 +338,7 @@ public class SQLiteAssetHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public final void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // not supported!
     }
 
