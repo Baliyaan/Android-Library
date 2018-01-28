@@ -1,6 +1,7 @@
 package com.baliyaan.android.mvp.Demo;
 
 import android.app.Activity;
+import android.os.Bundle;
 
 import com.baliyaan.android.mvp.Adapters.MVPNavigatorAdapter;
 
@@ -12,6 +13,11 @@ public class DemoMVPNavigator extends MVPNavigatorAdapter
         implements DemoMVPContract.Navigator {
 
     private DemoMVPContract.Port _port = null;
+
+    @Override
+    public Object getInstanceOf(String className, Bundle params) {
+        return super.getInstanceOf(className, params);
+    }
 
     DemoMVPNavigator(Activity activity){
         super(activity);

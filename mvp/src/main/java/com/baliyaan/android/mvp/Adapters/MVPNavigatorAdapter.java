@@ -1,6 +1,7 @@
 package com.baliyaan.android.mvp.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import com.baliyaan.android.mvp.Interfaces.BaseMVPNavigator;
 
@@ -19,5 +20,10 @@ public class MVPNavigatorAdapter implements BaseMVPNavigator {
     @Override
     public Context getContext() {
         return _context;
+    }
+
+    @Override
+    public Object getInstanceOf(String className, Bundle params) {
+        return null;
     }
 }

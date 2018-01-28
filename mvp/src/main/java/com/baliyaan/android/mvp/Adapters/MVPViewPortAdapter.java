@@ -35,19 +35,25 @@ public class MVPViewPortAdapter<N extends BaseMVPNavigator,P extends BaseMVPPres
         return _view;
     }
 
-    @Override
-    public Context getContext() {
-        return navigator().getContext();
-    }
 
-    // BaseMVPView implementation
+    /*BaseMVPView implementations*/
     @Override
     public P bindPresenter(P presenter) {
         _presenter = presenter;
         return _presenter;
     }
 
-    // BaseMVPPort implementation
+    @Override
+    public Context getContext() {
+        return navigator().getContext();
+    }
+
+    @Override
+    public Object getInstanceOf(String className, Bundle params) {
+        return null;
+    }
+
+    /*BaseMVPPort implementations*/
     @Override
     public void onSaveState(Bundle state) {
         if(null != presenter())
