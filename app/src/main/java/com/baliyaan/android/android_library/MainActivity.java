@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.baliyaan.android.library.ds.Trie;
+import com.baliyaan.android.library.io.SerializeService;
 import com.baliyaan.android.library.web.MyCallbackInterface;
 import com.baliyaan.android.library.web.MyWebView;
 
@@ -25,5 +27,20 @@ public class MainActivity extends AppCompatActivity {
          */
         //Interstitial interstitial = new Interstitial(this,"fake_id");
         //interstitial.show();
+
+        /*
+        :ds
+         */
+        Trie trie = null;
+        String trieSrl = "trie.srl";
+
+        trie = (Trie) SerializeService.deserialize(this,trieSrl);
+        if(null == trie) {
+            trie = new Trie();
+            trie.add("hello");
+            trie.add("helliya");
+
+            SerializeService.serialize(trie,this,trieSrl);
+        }
     }
 }

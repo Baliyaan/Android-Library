@@ -1,5 +1,6 @@
 package com.baliyaan.android.library.ds;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,9 +10,9 @@ import java.util.Map;
  */
 
 // Implements the actual Trie
-public class Trie {
+public class Trie implements Serializable{
     // Trie Node, which stores a character and the children in a HashMap
-    public static class TrieNode {
+    public static class TrieNode implements Serializable{
         public TrieNode(char ch)  {
             value = ch;
             children = new HashMap<>();
