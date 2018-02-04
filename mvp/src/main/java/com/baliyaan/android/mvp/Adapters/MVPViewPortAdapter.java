@@ -65,4 +65,9 @@ public class MVPViewPortAdapter<N extends BaseMVPNavigator,P extends BaseMVPPres
         if(null != presenter())
             presenter().onRestoreState(state);
     }
+
+    @Override
+    public void setVisibility(int visibility) {
+        view().setVisibility(visibility);
+    }
 }

@@ -9,4 +9,5 @@ import android.os.Bundle;
 public interface BaseMVPPort {
     void onSaveState(Bundle state);
     void onRestoreState(Bundle state);
+    void setVisibility(int visibility);
 }
